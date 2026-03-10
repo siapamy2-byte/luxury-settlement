@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Luxury Settlement</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:Poppins;
+background:linear-gradient(135deg,#000,#141414,#000);
+color:white;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
+
+.wrapper{
+display:flex;
+gap:30px;
+}
+
+.card{
+width:700px;
+background:rgba(255,255,255,0.03);
+border:1px solid rgba(212,175,55,0.4);
+border-radius:16px;
+padding:40px;
+backdrop-filter:blur(12px);
+box-shadow:0 0 40px rgba(0,0,0,.8);
+}
+
+.header{
+display:flex;
+justify-content:space-between;
+margin-bottom:30px;
+}
+
+.logo{
+font-family:Cinzel;
+font-size:34px;
+letter-spacing:6px;
+color:#d4af37;
+}
+
+.badge{
+border:1px solid #d4af37;
+padding:6px 14px;
+border-radius:6px;
+color:#d4af37;
+font-size:13px;
+}
+
+.label{
+font-size:12px;
+opacity:.6;
+margin-bottom:6px;
+}
+
+.bank{
+font-size:20px;
+margin-bottom:20px;
+}
+
+.account{
+background:#000;
+border:1px solid #d4af37;
+padding:16px;
+text-align:center;
+letter-spacing:4px;
+font-size:24px;
+border-radius:8px;
+margin-bottom:25px;
+}
+
+.row{
+display:flex;
+justify-content:space-between;
+gap:20px;
+}
+
+.box{
+flex:1;
+background:rgba(255,255,255,0.03);
+padding:16px;
+border-radius:8px;
+border:1px solid rgba(255,255,255,0.08);
+}
+
+.amount{
+color:#d4af37;
+font-size:26px;
+font-weight:600;
+}
+
+.qr{
+margin-top:25px;
+text-align:center;
+}
+
+.qr img{
+width:110px;
+}
+
+.footer{
+margin-top:20px;
+font-size:12px;
+opacity:.6;
+text-align:center;
+}
+
+.panel{
+width:260px;
+background:#0a0a0a;
+padding:20px;
+border-radius:12px;
+border:1px solid rgba(255,255,255,0.08);
+}
+
+.panel h3{
+margin-bottom:15px;
+color:#d4af37;
+}
+
+.panel input{
+width:100%;
+padding:8px;
+margin-bottom:10px;
+border:none;
+border-radius:4px;
+}
+
+.panel button{
+width:100%;
+padding:10px;
+background:#d4af37;
+border:none;
+border-radius:6px;
+font-weight:600;
+cursor:pointer;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="wrapper">
+
+<div class="card">
+
+<div class="header">
+
+<div class="logo">LUXURY</div>
+<div class="badge">VERIFIED</div>
+
+</div>
+
+<div class="label">INSTITUSI PERBANKAN</div>
+<div class="bank" id="bank">BANK RAKYAT INDONESIA (BRI)</div>
+
+<div class="account" id="rekening">5305 0101 1212 506</div>
+
+<div class="row">
+
+<div class="box">
+<div class="label">NAMA PENERIMA</div>
+<div id="nama">SARDI SAPUTRA</div>
+</div>
+
+<div class="box">
+<div class="label">JUMLAH PEMBAYARAN</div>
+<div class="amount" id="nominal">IDR 2.484.000</div>
+</div>
+
+</div>
+
+<div class="qr">
+<img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=PAYMENT">
+</div>
+
+<div class="footer">
+Transaksi dilindungi sistem enkripsi keamanan digital
+</div>
+
+</div>
+
+
+<div class="panel">
+
+<h3>Edit Data</h3>
+
+<input id="editBank" placeholder="Nama Bank">
+
+<input id="editNama" placeholder="Nama Rekening">
+
+<input id="editRekening" placeholder="Nomor Rekening">
+
+<input id="editNominal" placeholder="Nominal">
+
+<button onclick="updateData()">Update</button>
+
+</div>
+
+</div>
+
+<script>
+
+function updateData(){
+
+let bank = document.getElementById("editBank").value
+let nama = document.getElementById("editNama").value
+let rekening = document.getElementById("editRekening").value
+let nominal = document.getElementById("editNominal").value
+
+if(bank) document.getElementById("bank").innerText = bank
+if(nama) document.getElementById("nama").innerText = nama
+if(rekening) document.getElementById("rekening").innerText = rekening
+if(nominal) document.getElementById("nominal").innerText = nominal
+
+}
+
+</script>
+
+</body>
+</html>
